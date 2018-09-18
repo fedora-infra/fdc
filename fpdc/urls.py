@@ -25,5 +25,6 @@ router.register(r"release", ReleaseViewSet)
 
 urlpatterns = [
     url(r"^admin/", admin.site.urls),
+    url(r"^oidc/", include("mozilla_django_oidc.urls")),
     url(r"^api/v1/", include((router.urls, "releases"), namespace="v1")),
 ]
